@@ -43,6 +43,12 @@
         </dependency>
 
         <dependency>
+            <groupId>eviware</groupId>
+            <artifactId>wadl-xmlbeans</artifactId>
+            <version>1.1</version>
+        </dependency>
+
+        <dependency>
             <groupId>xmlbeans</groupId>
             <artifactId>xbean</artifactId>
             <version>fixed-2.4.0</version>

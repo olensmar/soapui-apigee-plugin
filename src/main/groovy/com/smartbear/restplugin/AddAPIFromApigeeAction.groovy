@@ -23,7 +23,7 @@ class AddAPIFromApigeeAction extends AbstractSoapUIAction<WsdlProject> {
     private static final String APIGEE_LISTING_URL_PROPERTY = "com.smartbear.soapui.apigee.listingurl"
 
     private XFormDialog dialog = null
-    private def apiEntries = [:]
+    private def apiEntries = new TreeMap()
     private JList apiList;
     private def selectedEntry = null
 
@@ -71,6 +71,7 @@ class AddAPIFromApigeeAction extends AbstractSoapUIAction<WsdlProject> {
                     dlg.run(new Worker.WorkerAdapter() {
                         Object construct(XProgressMonitor monitor) {
                             new WadlImporter(restService).initFromWadl(selectedEntry.wadlUrl);
+                            ApigeeUtils.postProcessService( restService )
                         }
                     })
                 }
@@ -94,11 +95,11 @@ class AddAPIFromApigeeAction extends AbstractSoapUIAction<WsdlProject> {
 
         def doc = loadJsonDoc(url)
 
-        doc.console.each {
-            it
-
+        doc.console.each { it
             apiEntries[it.displayName] = it
         }
+
+        apiEntries.sort{ a,b -> a.key.compareTo(b.key)}
 
         apiEntries
     }
