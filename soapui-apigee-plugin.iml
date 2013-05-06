@@ -130,6 +130,7 @@
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:3.8.1" level="project" />
     <orderEntry type="library" name="Maven: eviware:soapui:4.5.1" level="project" />
     <orderEntry type="library" name="Maven: eviware:soapui-xmlbeans:4.5.1" level="project" />
+    <orderEntry type="library" name="Maven: eviware:wadl-xmlbeans:1.1" level="project" />
     <orderEntry type="library" name="Maven: xmlbeans:xbean:fixed-2.4.0" level="project" />
     <orderEntry type="library" name="Maven: xmlbeans:xbean_xpath:2.4.0" level="project" />
     <orderEntry type="library" name="Maven: xmlbeans:xmlpublic:2.4.0" level="project" />
